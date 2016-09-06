@@ -74,6 +74,9 @@ static int sockev_client_cb(struct notifier_block *nb,
 		goto done;
 	if ((socknlmsgsk == NULL) || (sock == NULL) || (sock->sk == NULL))
 		goto done;
+	
+	if (sock->sk->sk_family != AF_INET && sock->sk->sk_family != AF_INET6)
+		goto done;
 
 	if (sock->sk->sk_family != AF_INET || sock->sk->sk_family != AF_INET6)
 		goto done;
