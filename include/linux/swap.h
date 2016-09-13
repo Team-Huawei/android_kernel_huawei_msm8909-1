@@ -152,10 +152,11 @@ enum {
 	SWP_CONTINUED	= (1 << 5),	/* swap_map has count continuation */
 	SWP_BLKDEV	= (1 << 6),	/* its a block device */
 	SWP_FILE	= (1 << 7),	/* set after swap_activate success */
+	SWP_FAST	= (1 << 8),	/* blkdev access is fast and cheap */
 					/* add others here before... */
-	SWP_SCANNING	= (1 << 8),	/* refcount in scan_swap_map */
-	SWP_FAST	= (1 << 9),	/* blkdev access is fast and cheap */
-
+	SWP_SCANNING	= (1 << 9),	/* refcount in scan_swap_map */
+};
+>>>>>>> 2b2479f... mm: swap: fix value of SWP_FAST
 
 #define SWAP_CLUSTER_MAX 32UL
 #define COMPACT_CLUSTER_MAX SWAP_CLUSTER_MAX
