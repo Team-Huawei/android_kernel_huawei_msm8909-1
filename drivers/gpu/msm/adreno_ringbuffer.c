@@ -248,6 +248,10 @@ int adreno_ringbuffer_read_pm4_ucode(struct kgsl_device *device)
 			adreno_dev->gpucore->pm4fw_name, &ptr, &len);
 
 		if (ret)
+		{
+			//if((ret == -EAGAIN) && (system_state == SYSTEM_POWER_OFF))
+			//	return;
+
 			goto err;
 
 		/* PM4 size is 3 dword aligned plus 1 dword of version */
@@ -269,7 +273,8 @@ int adreno_ringbuffer_read_pm4_ucode(struct kgsl_device *device)
 err:
 	KGSL_DRV_CRIT(device, "Failed to read pm4 microcode %s\n",
 		adreno_dev->gpucore->pm4fw_name);
-	return ret;
+
+return ret;	
 }
 
 /**
@@ -307,6 +312,10 @@ int adreno_ringbuffer_read_pfp_ucode(struct kgsl_device *device)
 		ret = _load_firmware(device,
 			adreno_dev->gpucore->pfpfw_name, &ptr, &len);
 		if (ret)
+
+		{
+			//if((ret == -EAGAIN) && (system_state == SYSTEM_POWER_OFF))
+			//	return;
 			goto err;
 
 		/* PFP size shold be dword aligned */
