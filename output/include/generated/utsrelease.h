@@ -1,1 +1,0 @@
-#define UTS_RELEASE "3.10.60-gd532b83"
