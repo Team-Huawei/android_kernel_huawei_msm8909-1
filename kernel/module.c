@@ -3249,11 +3249,6 @@ static int load_module(struct load_info *info, const char __user *uargs,
 	struct module *mod;
 	long err;
 
-	err = module_sig_check(info);
-
-#ifdef CONFIG_TIMA_LKMAUTH
-	unsigned long module_len = info->len;
-#endif
 	err = module_sig_check(info, flags);
 	if (err)
 		goto free_copy;
