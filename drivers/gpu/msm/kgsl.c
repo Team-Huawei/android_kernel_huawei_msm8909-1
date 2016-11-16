@@ -1008,7 +1008,7 @@ static void kgsl_process_private_close(struct kgsl_device_private *dev_priv,
 	 */
 	mutex_unlock(&kgsl_driver.process_mutex);
 
-	process_release_memory(dev_priv, private);
+	process_release_memory(private);
 
 	kgsl_process_private_put(private);
 }
@@ -1050,7 +1050,7 @@ static struct kgsl_process_private *kgsl_process_private_open(
 	}
 
 done:
-	f
+	mutex_unlock(&kgsl_driver.process_mutex);
 	return private;
 }
 
