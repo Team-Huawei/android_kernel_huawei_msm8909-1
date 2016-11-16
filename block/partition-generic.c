@@ -269,9 +269,14 @@ void delete_partition(struct gendisk *disk, int partno)
 #ifdef CONFIG_BLOCK_SUPPORT_STLOG
 	dev = part_to_dev(part);
 	ST_LOG("<%s> KOBJ_REMOVE %d:%d %s",
+<<<<<<< HEAD
 	__func__,MAJOR(dev->devt),MINOR(dev->devt),dev->kobj.name);
 #endif	
 >>>>>>> ac3fa14... Clean
+=======
+		__func__,MAJOR(dev->devt),MINOR(dev->devt),dev->kobj.name);
+#endif
+>>>>>>> parent of ac3fa14... Clean
 	device_del(part_to_dev(part));
 
 	hd_struct_put(part);

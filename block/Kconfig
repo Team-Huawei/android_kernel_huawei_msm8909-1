@@ -120,9 +120,9 @@ config BLOCK_COMPAT
 <<<<<<< HEAD
 =======
 config BLOCK_SUPPORT_STLOG
- 	bool "Enable storage log"
- 	depends on BLOCK && PROC_STLOG
- 	default y
+	bool "Enable storage log"
+	depends on BLOCK && PROC_STLOG
+	default y
 
 >>>>>>> ac3fa14... Clean
 source block/Kconfig.iosched
