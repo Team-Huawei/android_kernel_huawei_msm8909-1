@@ -264,16 +264,6 @@ void delete_partition(struct gendisk *disk, int partno)
 	rcu_assign_pointer(ptbl->part[partno], NULL);
 	rcu_assign_pointer(ptbl->last_lookup, NULL);
 	kobject_put(part->holder_dir);
-<<<<<<< HEAD
-=======
-#ifdef CONFIG_BLOCK_SUPPORT_STLOG
-	dev = part_to_dev(part);
-	ST_LOG("<%s> KOBJ_REMOVE %d:%d %s",
-<<<<<<< HEAD
-	__func__,MAJOR(dev->devt),MINOR(dev->devt),dev->kobj.name);
-#endif	
->>>>>>> ac3fa14... Clean
-=======
 		__func__,MAJOR(dev->devt),MINOR(dev->devt),dev->kobj.name);
 #endif
 >>>>>>> parent of ac3fa14... Clean
