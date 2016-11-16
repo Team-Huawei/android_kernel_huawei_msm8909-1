@@ -1759,7 +1759,6 @@ static signed long __sched deferred_schedule_timeout(signed long timeout)
 out:
 	return timeout < 0 ? 0 : timeout;
 }
-#endif
 
 static int ksmd_should_run(void)
 {
