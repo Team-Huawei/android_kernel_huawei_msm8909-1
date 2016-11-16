@@ -66,7 +66,6 @@
 #include <linux/pid_namespace.h>
 
 #include "audit.h"
-#ifdef CONFIG_PROC_AVC
 
 /* No auditing will take place until audit_initialized == AUDIT_INITIALIZED.
  * (Initialization happens after skb_init is called.) */
