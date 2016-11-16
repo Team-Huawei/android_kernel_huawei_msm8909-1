@@ -746,7 +746,7 @@ static int __init early_param_huaweitype(char * p)
     return 0;
 }
 early_param("androidboot.huawei_type", early_param_huaweitype);
-#endiff
+#endif
 
 static void __init request_standard_resources(const struct machine_desc *mdesc)
 {
