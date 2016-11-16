@@ -156,7 +156,6 @@ enum {
 					/* add others here before... */
 	SWP_SCANNING	= (1 << 9),	/* refcount in scan_swap_map */
 };
->>>>>>> 2b2479f... mm: swap: fix value of SWP_FAST
 
 #define SWAP_CLUSTER_MAX 32UL
 #define COMPACT_CLUSTER_MAX SWAP_CLUSTER_MAX
