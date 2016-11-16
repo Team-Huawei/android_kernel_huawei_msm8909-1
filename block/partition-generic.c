@@ -264,9 +264,6 @@ void delete_partition(struct gendisk *disk, int partno)
 	rcu_assign_pointer(ptbl->part[partno], NULL);
 	rcu_assign_pointer(ptbl->last_lookup, NULL);
 	kobject_put(part->holder_dir);
-		__func__,MAJOR(dev->devt),MINOR(dev->devt),dev->kobj.name);
-#endif
->>>>>>> parent of ac3fa14... Clean
 	device_del(part_to_dev(part));
 
 	hd_struct_put(part);
